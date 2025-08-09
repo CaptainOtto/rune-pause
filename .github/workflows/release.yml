@@ -1,10 +1,9 @@
 name: Release builds
-
 on:
-  workflow_dispatch:
   push:
     tags:
       - 'v*.*.*'
+  workflow_dispatch:
 
 jobs:
   build-macos:
@@ -12,43 +11,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+        with: { node-version: '18' }
       - uses: dtolnay/rust-toolchain@stable
       - name: Install deps
         run: |
-          cd apps/desktop
-          npm i -g pnpm
-          pnpm i
+          pnpm i -g pnpm
+          pnpm install
       - name: Build
-        run: |
-          cd apps/desktop
-          pnpm build
+        run: pnpm dlx @tauri-apps/cli@latest build
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: macos-bundles
           path: src-tauri/target/release/bundle/**/*
-
   build-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+        with: { node-version: '18' }
       - uses: dtolnay/rust-toolchain@stable
       - name: Install deps
         shell: bash
         run: |
-          cd apps/desktop
-          npm i -g pnpm
-          pnpm i
+          pnpm i -g pnpm
+          pnpm install
       - name: Build
         shell: bash
-        run: |
-          cd apps/desktop
-          pnpm build
+        run: pnpm dlx @tauri-apps/cli@latest build
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
