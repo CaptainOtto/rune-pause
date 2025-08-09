@@ -1,0 +1,20 @@
+:root{
+  --bg: #0b0c10; --fg:#e6e7ea; --muted:#9aa0a6; --card:#13151b; --border:#1f2330; --accent:#7aa2f7;
+}
+:root.light{
+  --bg:#fafafa; --fg:#0b0c10; --muted:#444; --card:#ffffff; --border:#e7e7e7; --accent:#3d63dd;
+}
+html,body,#app{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto}
+button{background:transparent;border:1px solid var(--border);color:var(--fg);padding:8px 10px;border-radius:12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+input,select{background:var(--card);color:var(--fg);border:1px solid var(--border);padding:8px;border-radius:10px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px}
+.row{display:flex;gap:8px;align-items:center}
+.small{opacity:.7;font-size:12px}
+.h1{font-size:20px;font-weight:700}
+.timer{font-size:36px;font-weight:700;letter-spacing:.5px}
+.link{color:var(--accent);text-decoration:none}
+.center{display:flex;align-items:center;justify-content:center}
+ul{margin:6px 0 0 16px;padding:0}
+li{margin:4px 0}
