@@ -1,0 +1,11 @@
+{
+  "version": "0.4.0",
+  "notes": "Första publika versionen av Rune Pause",
+  "pub_date": "2025-08-09T00:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "PASTE-SIGNATURE-WIN64",
+      "url": "https://github.com/CaptainOtto/rune-pause/releases/download/v0.4.0/Rune-Pause_0.4.0_x64.msi"
+    }
+  }
+}
